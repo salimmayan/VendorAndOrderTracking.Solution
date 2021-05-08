@@ -63,5 +63,24 @@ namespace VendorAndOrderTracker.Tests
             Assert.AreEqual(name, result);
         }
 
+        [TestMethod]
+    public void SetName_SetName_String()
+    {
+      //Arrange
+      string name = "Vendor Name";
+      string description = "Vendor Description";
+      Vendor newVendor = new Vendor(name, description);
+
+      //Act - //Created an object; next gave property new value using dot operator; 
+      // Check if Object "took" the new value passed thru dot operator
+      string updatedName = "New Vendor Name"; 
+      newVendor.Name = updatedName;
+      string result = newVendor.Name;
+
+
+      //Assert
+      Assert.AreEqual(updatedName, result);
+    }
+
     }
 }
