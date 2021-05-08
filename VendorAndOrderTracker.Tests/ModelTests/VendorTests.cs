@@ -12,7 +12,7 @@ namespace VendorAndOrderTracker.Tests
 
         public void Dispose()
         {
-            // Vendor.ClearAll();
+            Vendor.ClearAll();
         }
 
         [TestMethod]
@@ -64,23 +64,40 @@ namespace VendorAndOrderTracker.Tests
         }
 
         [TestMethod]
-    public void SetName_SetName_String()
-    {
-      //Arrange
-      string name = "Vendor Name";
-      string description = "Vendor Description";
-      Vendor newVendor = new Vendor(name, description);
+        public void SetName_SetName_String()
+        {
+            //Arrange
+            string name = "Vendor Name";
+            string description = "Vendor Description";
+            Vendor newVendor = new Vendor(name, description);
 
-      //Act - //Created an object; next gave property new value using dot operator; 
-      // Check if Object "took" the new value passed thru dot operator
-      string updatedName = "New Vendor Name"; 
-      newVendor.Name = updatedName;
-      string result = newVendor.Name;
+            //Act - //Created an object; next gave property new value using dot operator; 
+            // Check if Object "took" the new value passed thru dot operator
+            string updatedName = "New Vendor Name";
+            newVendor.Name = updatedName;
+            string result = newVendor.Name;
 
 
-      //Assert
-      Assert.AreEqual(updatedName, result);
-    }
+            //Assert
+            Assert.AreEqual(updatedName, result);
+        }
+
+        [TestMethod]
+        public void GetId_ReturnsVendorId_Int()
+        {
+            //Arrange
+            string name = "Vendor Name";
+            string description = "Vendor Description";
+            Vendor newVendor = new Vendor(name, description);
+            Vendor newVendor2 = new Vendor(name, description);
+            Vendor newVendor3 = new Vendor(name, description);
+
+            //Act
+            int result = newVendor3.Id;
+
+            //Assert
+            Assert.AreEqual(3, result);
+        }
 
     }
 }
