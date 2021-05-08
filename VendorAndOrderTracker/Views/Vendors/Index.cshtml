@@ -1,0 +1,22 @@
+@using VendorAndOrderTracker.Models;
+
+@{
+  Layout = "_Layout";
+}
+
+<h1>Vendor And Order Tracker: <span class="titleColor">Listing of Vendors</span></h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No Vendors have been added yet!</h3>
+} 
+
+<br><br>
+@foreach (Vendor vendor in Model) //parsing through List containing Vendor objects
+{
+  <h3><a href='/vendors/@vendor.Id'><span class="black">Vendor Name:&nbsp;</span><span class="olive">@vendor.Name</span></a></h3>
+  <h3><a href='/vendors/@vendor.Id'><span class="black">Vendor Description:&nbsp;</span><span class="olive">@vendor.Description</span></a></h3>
+  <br>
+}
+<br><br>
+<p><a href='/'>Back home</a></p>
