@@ -133,5 +133,22 @@ namespace VendorAndOrderTracker.Tests
             CollectionAssert.AreEqual(newList, result); //compare 2 lists
         }
 
+        [TestMethod]
+        public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+        {
+            //Arrange
+            string description = "Trial Order";
+            string title = "Crossant order";
+            int price = 35;
+            Order newOrder = new Order(description, title, price);
+
+            //Act
+            int result = newOrder.Id;
+
+            //Assert
+            Assert.AreEqual(1, result);
+        }
+
+
     }
 }
