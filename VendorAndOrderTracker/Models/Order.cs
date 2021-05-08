@@ -23,5 +23,7 @@ namespace VendorAndOrderTracker.Models
             Date = DateTime.Now.ToString("M/d/yyyy");
         }
 
+        
+
     }
 }
