@@ -11,7 +11,7 @@ namespace VendorAndOrderTracker.Tests
 
         public void Dispose()
         {
-
+            Order.ClearAll();
         }
 
         [TestMethod]
@@ -111,5 +111,27 @@ namespace VendorAndOrderTracker.Tests
             //Assert
             Assert.AreEqual(updatedTitle, result);
         }
+
+        [TestMethod]
+        public void GetAll_ReturnsItems_ItemList()
+        {
+            //Arrange
+            string description01 = "Trial Order-1";
+            string description02 = "Trial Order-2";
+            string title01 = "Crossant order";
+            string title02 = "Bread order";
+            int price01 = 35;
+            int price02 = 45;
+            Order newOrder1 = new Order(description01, title01, price01);
+            Order newOrder2 = new Order(description02, title02, price02);
+            List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+
+            //Act
+            List<Order> result = Order.GetAll();
+
+            //Assert
+            CollectionAssert.AreEqual(newList, result); //compare 2 lists
+        }
+
     }
 }
