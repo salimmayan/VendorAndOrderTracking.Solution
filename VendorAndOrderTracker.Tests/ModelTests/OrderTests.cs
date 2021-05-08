@@ -168,6 +168,19 @@ namespace VendorAndOrderTracker.Tests
             Assert.AreEqual(newOrder2, result); //Order returned by Find() should match order newOrder2
         }
 
+        [TestMethod]
+        public void GetAll_ReturnsEmptyList_OrderList()
+        {
+            // Arrange
+            List<Order> newList = new List<Order> { };
+
+            // Act
+            List<Order> result = Order.GetAll();
+
+            // Assert
+            CollectionAssert.AreEqual(newList, result);
+        }
+
 
     }
 }
