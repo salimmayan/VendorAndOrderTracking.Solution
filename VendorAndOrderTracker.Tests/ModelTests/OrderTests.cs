@@ -77,6 +77,39 @@ namespace VendorAndOrderTracker.Tests
             //Assert
             Assert.AreEqual(updatedPrice, result);
         }
+        [TestMethod]
+        public void GetTitle_ReturnsTitle_String()
+        {
+            //Arrange
+            string description = "Trial Order";
+            string title = "Crossant order";
+            int price = 35;
+            Order newOrder = new Order(description, title, price);
 
+            //Act
+            string result = newOrder.Title;
+
+            //Assert
+            Assert.AreEqual(title, result);
+        }
+
+        [TestMethod]
+        public void SetTitle_ReturnsTitle_String()
+        {
+            //Arrange
+            string description = "Trial Order";
+            string title = "Crossant order";
+            int price = 35;
+            Order newOrder = new Order(description, title, price);
+
+            //Act
+            string updatedTitle = "Bread Order";
+            newOrder.Title = updatedTitle;
+            string result = newOrder.Title;
+
+
+            //Assert
+            Assert.AreEqual(updatedTitle, result);
+        }
     }
 }
