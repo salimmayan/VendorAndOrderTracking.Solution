@@ -99,5 +99,24 @@ namespace VendorAndOrderTracker.Tests
             Assert.AreEqual(3, result);
         }
 
+        [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      //Arrange
+      string name01 = "Vendor Name-1";
+      string name02 = "Vendor Name-2";
+      string description01 = "Vendor Description-1"; 
+      string description02 = "Vendor Description-2";
+      Vendor newVendor01 = new Vendor(name01, description01);
+      Vendor newVendor02 = new Vendor(name02, description02);
+      List<Vendor> newList = new List<Vendor> { newVendor01, newVendor02 };
+
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result); // Two Objects are pushed into Static LIST and same two objects are pushed into a local LIST. Compare the 2 LISTS
+    }
+
     }
 }
