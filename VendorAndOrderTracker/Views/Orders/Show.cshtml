@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Vendor And Order Tracker: <span class="titleColor">Order Details Page</span></h1>
+
+<h3><span class="black">Order Description: </span><span class="olive"></span>@Model["order"].Description</span></h3>
+<h3><span class="black">Order Title: </span><span class="olive">@Model["order"].Title</span></h3>
+<h3><span class="black">Order Price: </span><span class="olive">$@Model["order"].Price</span></h3>
+<h3><span class="black">Order Date: </span><span class="olive">@Model["order"].Date</span></h3><br><br>
+<h3><span class="black">Vendor Name: </span><span class="olive">@Model["vendor"].Name</span></h3>
+
+<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another Order</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='/vendors'>View all Vendors</a>

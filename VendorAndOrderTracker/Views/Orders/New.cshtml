@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Vendor And Order Tracker: <span class="titleColor">Add a new Order to @Model.Name</span></h1>
+
+<form action="/vendors/@Model.Id/orders" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+
+  <label for="orderDescription">Order Description</label>
+  <input id="orderDescription" required name="orderDescription" type="text">&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label for="orderTitle">Order Title</label>
+  <input id="orderTitle" name="orderTitle" required type="text">&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <label for="orderPrice">Order Price</label>
+  <input id="orderPrice" name="orderPrice" required min ="1" type="number">&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <br><br>
+  <button type='submit'>Add Order</button>
+</form>

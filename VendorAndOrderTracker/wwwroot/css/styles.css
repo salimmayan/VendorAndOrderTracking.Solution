@@ -31,6 +31,16 @@ h3 {
   color: olive;
 }
 
+
+h6 {
+  padding-left: 12px;
+  text-align: left !important;
+  color: olive;
+  /* margin:auto;
+  width: 100%;
+  text-align: right; */
+}
+
 .orderList {
   padding-left: 10px;
   text-align: left;
